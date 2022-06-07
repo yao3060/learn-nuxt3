@@ -20,7 +20,7 @@ function log() {
 }
 
 definePageMeta({
-  layout: "home",
+  layout: "default",
 });
 
 useHead({

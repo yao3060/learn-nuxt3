@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   // If you have enabled `Take Over Mode` or installed the `TypeScript Vue Plugin (Volar)`,
   // you can disable generating the shim for *.vue files:
   shim: false,
+  strict: true,
   app: {
     head: {
       charset: 'utf-8',
