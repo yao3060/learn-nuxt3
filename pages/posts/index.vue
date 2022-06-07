@@ -18,12 +18,7 @@ import { ref } from 'vue';
 import { PostType } from '~/types/Post'
 
 const title = ref('Posts Page Title')
-const posts = ref<PostType[]>([])
-const { data } = await useFetch('https://www.yaoin.net/wp-json/wp/v2/posts')
-posts.value = data.value as PostType[]
-// for (const i in data.value) {
-//   posts.value.push(Post.parse(data.value[i]))
-// }
+const { data: posts } = await useFetch<PostType[]>('https://www.yaoin.net/wp-json/wp/v2/posts')
 
 definePageMeta({
   layout: "default",
