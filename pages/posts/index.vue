@@ -17,8 +17,10 @@
 import { ref } from 'vue';
 import { PostType } from '~/types/Post'
 
+const config = useRuntimeConfig()
+
 const title = ref('Posts Page Title')
-const { data: posts } = await useFetch<PostType[]>('https://www.yaoin.net/wp-json/wp/v2/posts')
+const { data: posts } = await useFetch<PostType[]>(`${config.public.API_BASE_URL}/wp/v2/posts`)
 
 definePageMeta({
   layout: "default",

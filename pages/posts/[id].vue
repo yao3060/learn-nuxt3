@@ -9,9 +9,10 @@
 import { PostType } from '~/types/Post'
 
 const route = useRoute()
+const config = useRuntimeConfig()
 const postId = route.params.id
 
-const { data: post } = await useFetch<PostType>(`https://www.yaoin.net/wp-json/wp/v2/posts/${postId}`)
+const { data: post } = await useFetch<PostType>(`${config.public.API_BASE_URL}/wp/v2/posts/${postId}`)
 
 definePageMeta({
   layout: "default",
